@@ -14,6 +14,24 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return testforplatAPI.post(`/api/v1/signup/`, payload)
 }
+function api_v1_stores_list(payload) {
+  return testforplatAPI.get(`/api/v1/stores/`)
+}
+function api_v1_stores_create(payload) {
+  return testforplatAPI.post(`/api/v1/stores/`, payload)
+}
+function api_v1_stores_retrieve(payload) {
+  return testforplatAPI.get(`/api/v1/stores/${payload.id}/`)
+}
+function api_v1_stores_update(payload) {
+  return testforplatAPI.put(`/api/v1/stores/${payload.id}/`, payload)
+}
+function api_v1_stores_partial_update(payload) {
+  return testforplatAPI.patch(`/api/v1/stores/${payload.id}/`, payload)
+}
+function api_v1_stores_destroy(payload) {
+  return testforplatAPI.delete(`/api/v1/stores/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return testforplatAPI.post(`/rest-auth/login/`, payload)
 }
@@ -51,6 +69,12 @@ export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
   api_v1_signup_create,
+  api_v1_stores_list,
+  api_v1_stores_create,
+  api_v1_stores_retrieve,
+  api_v1_stores_update,
+  api_v1_stores_partial_update,
+  api_v1_stores_destroy,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
